@@ -1,0 +1,70 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url("../img/low-poly.png");
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+.box{
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #131313b0;
+  text-align: center;
+  border-radius: 12px;
+}
+.box h1{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box p, p2, p3, p4, p5, p6, p7{
+  color: red;
+  display: none;
+}
+.box a{
+  color: #2ecc71;
+  text-decoration: underline;
+  font-weight: normal;
+}
+.box input[type = "text"], .box input[type = "password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.5s;
+}
+.box input[type = "text"]:focus, .box input[type = "password"]:focus{
+  width: 280px;
+  border-color: #2ecc71;
+}
+.box input[type = "button"], input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.box input[type = "button"]:hover, input[type = "submit"]:hover{
+  background: #2ecc71;
+}
