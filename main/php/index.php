@@ -23,14 +23,14 @@ $userid = $_SESSION['userid'];
 
           </div>
         </div>
-        <div class="main_head_box">
+        <div class="head_main_box">
 
         </div>
       </div>
       <div class="dl_main">
         <div class="main_chat_box">
           <div class="chat_history_box">
-            
+
           </div>
           <div class="chat_typing_box">
 
