@@ -13,19 +13,19 @@ $userid = $_SESSION['userid'];
     <meta charset="utf-8">
     <title>DaLe</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic" rel="stylesheet" type="text/css">
   </head>
   <body class="All">
     <div class="dl_all_wrap">
       <div class="dl_head">
         <div class="head_dropdown_box">
           <div class="head_dropdown">
-            DaLe
-            <ul>
+            <p id="dropdown_heading">DaLe</p>
+            <div class="dropdown_menu">
               <li>New Group</li>
               <li>Contacts</li>
               <li>Settings</li>
               <li>Info</li>
+            </div>
           </div>
         </div>
         <div class="head_main_box">

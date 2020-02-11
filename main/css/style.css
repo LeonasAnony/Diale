@@ -1,6 +1,16 @@
 body {
   background-color: transparent;
 }
+#dropdown_heading {
+  font-size: 24px;
+  font-family: Courier New;
+  font-style: normal;
+  font-weight: 700;
+  font-variant: normal;
+  color: #e96464;
+  margin-top: 15px;
+  margin-left: 100px;
+}
 .dl_all_wrap {
   position: absolute;
   width: 100%;
@@ -44,18 +54,26 @@ body {
 .head_dropdown:hover  {
   background: rgb(45, 50, 59);
 }
-.head_dropdown:hover ul {
+.head_dropdown:hover .dropdown_menu {
   display: block;
 }
-ul {
+.dropdown_menu {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   display: none;
+  z-index: 1;
+  top: 100%;
+  left: 0px;
 }
-ul li {
-  background: #555;
+li {
+  background: rgb(45, 50, 59);
   display: block;
 }
-ul li:hover {background: #666;}
+li:hover {
+  background: rgb(36, 39, 45);
+}
 .head_main_box {
   position: absolute;
   width: 77.5%;
