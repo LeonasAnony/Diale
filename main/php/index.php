@@ -20,7 +20,12 @@ $userid = $_SESSION['userid'];
       <div class="dl_head">
         <div class="head_dropdown_box">
           <div class="head_dropdown">
-
+            DaLe
+            <ul>
+              <li>New Group</li>
+              <li>Contacts</li>
+              <li>Settings</li>
+              <li>Info</li>
           </div>
         </div>
         <div class="head_main_box">
