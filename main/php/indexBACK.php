@@ -18,20 +18,20 @@ $userid = $_SESSION['userid'];
   <body class="All">
     <div class="dl_all_wrap">
       <div class="dl_head">
-        <div class="head_search_box">
-
+        <div class="head_dropdown_box">
+          <div class="head_dropdown">
+            <button class="dropbtn">
+              <p id="dropdown_heading">DaLe</p>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">New Group</a>
+              <a href="#">Contacts</a>
+              <a href="#">Settings</a>
+              <a href="#">About</a>
+            </div>
+          </div>
         </div>
         <div class="head_main_box">
-         
-        </div>
-      </div>
-      <div class="dl_sidebar">
-        <div class="sidebar_main_icons">
-          <i class="fas fa-users"></i>
-          <i class="fas fa-address-book"></i>
-          <i class="fas fa-cog"></i>
-        </div>
-        <div class="sidebar_low_icons">
 
         </div>
       </div>
