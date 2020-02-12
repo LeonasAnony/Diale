@@ -1,6 +1,47 @@
 body {
   background-color: transparent;
 }
+#name_dale {
+  font-size: 24px;
+  font-family: Courier New;
+  font-style: normal;
+  font-weight: 700;
+  font-variant: normal;
+  color: rgb(150, 90, 218);
+  margin: 5px;
+  margin-top: 10px;
+}
+.smi {
+  display: block;
+  font-size: 40px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: rgb(150, 90, 218);
+}
+.sli {
+  display: block;
+  font-size: 40px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: rgb(150, 90, 218);
+}
+.fa-users {
+  margin-top: 18px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.fa-address-book {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.fa-cog {
+  margin-left: 14px;
+  margin-right: 14px;
+}
+.fa-question-circle {
+  margin-left: 14px;
+  margin-right: 14px;
+}
 .dl_all_wrap {
   position: absolute;
   width: 100%;
@@ -13,17 +54,17 @@ body {
 .dl_head {
   position: absolute;
   width: 100%;
-  height: 7%;
+  height: 5%;
   box-sizing: border-box;
   background: rgb(35, 41, 68);
   top: 0px;
   left: 0px;
-  min-height: 40px;
+  min-height: 30px;
   z-index: 1;
 }
 .head_search_box {
   position: absolute;
-  width: 22.5%;
+  width: 17.5%;
   height: 100%;
   box-sizing: border-box;
   background: transparent;
@@ -32,7 +73,7 @@ body {
   border-bottom: 2px solid;
   border-bottom-color: rgb(35, 41, 68);
   top: 0px;
-  left: 0px;
+  left: 5%;
 }
 .head_main_box {
   position: absolute;
@@ -43,13 +84,56 @@ body {
   top: 0px;
   left: 22.5%;
 }
+.dl_name {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  box-sizing: border-box;
+  background: rgb(35, 41, 68);
+  top: 0px;
+  left: 0px;
+  min-height: 30px;
+  z-index: 1;
+  border-right: 2px solid;
+  border-right-color: rgb(86, 130, 163);
+  border-bottom: 2px solid;
+  border-bottom-color: rgb(86, 130, 163);
+}
+.dl_sidebar {
+  position: absolute;
+  width: 5%;
+  height: 95%;
+  box-sizing: border-box;
+  background: rgb(35, 41, 68);
+  top: 5%;
+  left: 0px;
+  z-index: 1;
+}
+.sidebar_main_icons {
+  position: absolute;
+  width: 100%;
+  height: ;
+  box-sizing: border-box;
+  background: transparent;
+  top: 0px;
+  left: 0px;
+}
+.sidebar_low_icons {
+  position: absolute;
+  width: 100%;
+  height: ;
+  box-sizing: border-box;
+  background: transparent;
+  top: 81%;
+  left: 0px;
+}
 .dl_main {
   position: absolute;
   width: 100%;
-  height: 93%;
+  height: 95%;
   box-sizing: border-box;
   background: rgb(86, 130, 163);
-  top: 7%;
+  top: 5%;
   left: 0px;
 }
 .main_chat_box {

@@ -22,17 +22,20 @@ $userid = $_SESSION['userid'];
 
         </div>
         <div class="head_main_box">
-         
+
         </div>
+      </div>
+      <div class="dl_name">
+        <p id="name_dale">DaLe</p>
       </div>
       <div class="dl_sidebar">
         <div class="sidebar_main_icons">
-          <i class="fas fa-users"></i>
-          <i class="fas fa-address-book"></i>
-          <i class="fas fa-cog"></i>
+          <i class="fas smi fa-users"></i>
+          <i class="fas smi fa-address-book"></i>
         </div>
         <div class="sidebar_low_icons">
-
+          <i class="fas sli fa-cog"></i>
+          <i class="fas sli fa-question-circle"></i>
         </div>
       </div>
       <div class="dl_main">
