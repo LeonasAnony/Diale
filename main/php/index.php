@@ -38,6 +38,20 @@ $userid = $_SESSION['userid'];
           <i class="fas sli fa-question-circle"></i>
         </div>
       </div>
+<!--      <div class="sidebar_descriptions">
+        <div class="sidebar_group_description">
+          <p id="group_description">Create a new Group</p>
+        </div>
+        <div class="sidebar_contacts_description">
+
+        </div>
+        <div class="sidebar_settings_description">
+
+        </div>
+        <div class="sidebar_about_description">
+
+        </div>
+      </div>-->
       <div class="dl_main">
         <div class="main_chat_box">
           <div class="chat_history_box">
