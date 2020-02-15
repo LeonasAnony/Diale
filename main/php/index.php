@@ -11,7 +11,7 @@ $userid = $_SESSION['userid'];
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>DaLe</title>
+    <title>Diale</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/all.css">
   </head>
@@ -26,7 +26,7 @@ $userid = $_SESSION['userid'];
         </div>
       </div>
       <div class="dl_name">
-        <p id="name_dale">DaLe</p>
+        <img src="../img/Diale_logo.png" alt="Diale" id="name_diale">
       </div>
       <div class="dl_sidebar">
         <div class="sidebar_main_icons">

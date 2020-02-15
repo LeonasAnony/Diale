@@ -1,15 +1,15 @@
 body {
   background-color: transparent;
 }
-#name_dale {
+#name_diale {
+  height: 100%;
   font-size: 24px;
-  font-family: Courier New;
+  font-family: Courier;
   font-style: normal;
   font-weight: 700;
   font-variant: normal;
   color: rgb(164, 84, 255);
-  margin: 5px;
-  margin-top: 10px;
+  margin-left: 15%;
 }
 .smi {
   display: block;
@@ -55,7 +55,7 @@ body {
 .dl_head {
   position: absolute;
   width: 100%;
-  height: 5%;
+  height: 6%;
   box-sizing: border-box;
   background: rgb(35, 41, 68);
   top: 0px;
@@ -88,7 +88,7 @@ body {
 .dl_name {
   position: absolute;
   width: 5%;
-  height: 5%;
+  height: 6%;
   box-sizing: border-box;
   background: rgb(35, 41, 68);
   top: 0px;
@@ -103,10 +103,10 @@ body {
 .dl_sidebar {
   position: absolute;
   width: 5%;
-  height: 95%;
+  height: 94%;
   box-sizing: border-box;
   background: rgb(35, 41, 68);
-  top: 5%;
+  top: 6%;
   left: 0px;
   z-index: 1;
 }
@@ -150,10 +150,10 @@ body {
 .dl_main {
   position: absolute;
   width: 100%;
-  height: 95%;
+  height: 94%;
   box-sizing: border-box;
   background: rgb(52, 152, 219);
-  top: 5%;
+  top: 6%;
   left: 0px;
 }
 .main_chat_box {
