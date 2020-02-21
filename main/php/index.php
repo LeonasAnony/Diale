@@ -12,6 +12,7 @@ $userid = $_SESSION['userid'];
   <head>
     <meta charset="utf-8">
     <title>Diale</title>
+    <link rel="icon" href="../../global/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/all.css">
   </head>
@@ -26,16 +27,15 @@ $userid = $_SESSION['userid'];
         </div>
       </div>
       <div class="dl_name">
-        <img src="../img/Diale_logo.png" alt="Diale" id="name_diale">
+        <img src="../../global/Diale_logo.png" alt="Diale" id="name_diale">
       </div>
       <div class="dl_sidebar">
         <div class="sidebar_main_icons">
-          <i class="fas smi fa-users"></i>
-          <i class="fas smi fa-address-book"></i>
+          <i class="fas smi fa-users" onclick="newGroup()"></i>
         </div>
         <div class="sidebar_low_icons">
-          <i class="fas sli fa-cog"></i>
-          <i class="fas sli fa-question-circle"></i>
+          <i class="fas sli fa-cog" onclick="showSettings()"></i>
+          <i class="fas sli fa-question-circle" onclick="showAbout()"></i>
         </div>
       </div>
 <!--      <div class="sidebar_descriptions">
@@ -66,5 +66,6 @@ $userid = $_SESSION['userid'];
         </div>
       </div>
     </div>
+    <script src="../js/script.js"></script>
   </body>
 </html>

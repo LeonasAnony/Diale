@@ -1,14 +1,15 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost:3306;dbname=DaLe', 'root', '');
+//echo("PHp works");
+$pdo = new PDO('mysql:host=diale-db.ddns.net:3306;dbname=Diale', 'Diale', '0YGFOd2p4XNXm9FQZziX32av');
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>DaLe Login</title>
+    <link rel="icon" href="../../global/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <!--<script type="text/javascript" src="../js/script.js"></script>-->
   </head>
   <body>
     <?php
