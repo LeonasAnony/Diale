@@ -30,18 +30,36 @@ body {
   margin-left: 8px;
   margin-right: 8px;
 }
-.fa-address-book {
-  margin-left: 16px;
-  margin-right: 16px;
+.fa-users:hover {
+  font-size: 44px;
+  margin-top: 16px;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 .fa-cog {
   margin-left: 14px;
   margin-right: 14px;
+  margin-bottom: 23px;
+}
+.fa-cog:hover {
+  font-size: 44px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 23px;
+  margin-bottom: 21px;
 }
 .fa-question-circle {
   margin-left: 14px;
   margin-right: 14px;
+  margin-top: 0px;
   margin-bottom: 0px;
+  padding-top: 2px;
+}
+.fa-question-circle:hover {
+  font-size: 44px;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-top: 0px;
 }
 .dl_all_wrap {
   position: absolute;
