@@ -1,0 +1,53 @@
+<?php
+if (!isset($_GET['site'])) {
+  echo "<style>.msgr {display: inline;}</style>";
+}
+?>
+<div class="container">
+  <div class="columns">
+    <div id="sidebar" class="column col-xs-12 col-sm-6 col-md-5 col-lg-4 col-3">
+      <div class="column col-12"><img id="Diale_text_small" width="99%" alt="Diale_logo" src="global/Logos/Diale_text_new.png"/></div>
+      <hr />
+        <div class="columns col-oneline" onclick="Messenger()">
+          <div class="column col-4" id="logos">
+            <img id="Messenger_logo" height="60%" alt="Messenger_logo" src="global/IconsPurple/Icon_MessengerLila.png"/>
+          </div>
+          <div class="column col-8 col-lg-auto" id="Messenger_logo">
+            <h2 id="schrift">Message's</h2>
+          </div>
+        </div>
+        <div class="columns col-oneline" onclick="Pads()">
+          <div class="column col-4" id="logos">
+            <img id="Pad_logo" height="60%" alt="Pad_logo" src="global/IconsPurple/Icon_PadLila.png"/>
+          </div>
+          <div class="column col-8 col-lg-auto" id="pad_schrift">
+            <h2 id="schrift">Pad's</h2>
+          </div>
+        </div>
+        <div class="columns col-oneline" onclick="Boards()">
+          <div class="column col-4" id="logos">
+            <img id="Checklist_logo" height="60%" alt="Checklist_logo" src="global/IconsPurple/Icon_ChecklistLila.png"/>
+          </div>
+          <div class="column col-8 col-lg-auto" id="Checklist_logo">
+            <h2 id="schrift">Board's</h2>
+          </div>
+        </div>
+        <div class="columns col-oneline" onclick="Kalender()">
+          <div class="column col-4" id="logos">
+            <img id="Kalender_logo" height="60%" alt="Kalender_logo" src="global/IconsPurple/Icon_KalenderLila.png"/>
+          </div>
+          <div class="column col-8 col-lg-auto" id="Kalender_logo">
+            <h2 id="schrift">Kalender</h2>
+          </div>
+        </div>
+        <div class="columns col-oneline" onclick="Datein()">
+          <div class="column col-4" id="logos">
+            <img id="Dateimanager_logo" height="60%" alt="Dateimanager_logo" src="global/IconsPurple/Icon_Datei_ManagerLila.png"/>
+          </div>
+          <div class="column col-8 col-lg-auto" id="Dateimanager_logo">
+            <h2 id="schrift">Dateien</h2>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#sidebar {
+  background-color: #353c5b;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+  height: 100%;
+}
+#Diale_text_small {
+  margin-top: 8%;
+  margin-bottom: 5%
+}
+#logos {
+  height: 4rem;
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+#schrift {
+  color: #3498db;
+  font-family: Courier;
+  margin-top: 1.85rem;
+  margin-left: 1rem;
+}
+#div_schrift {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-left: 0px;
+}

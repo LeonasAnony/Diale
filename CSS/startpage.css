@@ -1,0 +1,171 @@
+body {
+  background-image: url("/global/Backgrounds/cyber.jpg");
+  font-family: Courier;
+  line-height: 1.2;
+}
+#headline {
+  margin-bottom: 0;
+}
+#HeadDiv {
+  height: 8rem;
+  margin-top: 1.5rem;
+}
+#SettingsDiv {
+  padding: 0;
+  position: absolute;
+  right: 0%;
+}
+#Settingsicon {
+  margin-right: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  right: 0;
+}
+#Settingsicon:hover {
+  background-color: #353c5bb0;
+  height: 1.8rem;
+  margin-right: 1.35rem;
+  cursor: pointer;
+}
+.modal_background {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+.box{
+  display: none;
+  z-index: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 0;
+  padding-right: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #131313;
+  opacity: 0.8;
+  text-align: center;
+  border-radius: 12px;
+}
+.box h1{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box p, p1, p2, p3{
+  color: red;
+  display: none;
+}
+.box a{
+  color: #a454ff;
+  text-decoration: underline;
+  font-weight: normal;
+}
+.box input[type = "text"] {
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 13rem;
+  outline: none;
+  color: white;
+  border-radius: 25rem;
+  transition: 0.5s;
+}
+.box input[type = "text"]:focus {
+  width: 15rem;
+  border-color: #a454ff;
+}
+.box #TeamDiscription {
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: left;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 13rem;
+  outline: none;
+  color: white;
+  border-radius: 1rem;
+  transition: 0.5s;
+}
+.box #TeamDiscription:focus {
+  width: 15rem;
+  border-color: #a454ff;
+}
+.box input[type = "submit"] {
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #a454ff;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 25rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:hover {
+  background: #a454ff;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.Headline {
+  color: #3498db;
+  margin: 1rem;
+}
+.profilepicture {
+  height: 1.5rem;
+  float: left;
+  margin: 1rem;
+  border-radius: 10%
+}
+.fonts {
+  color: #3498db;
+  font-size: 1.5rem;
+  float: left;
+  margin: 1rem;
+  height: 1.5rem;
+}
+.boxes {
+  display: block;
+  height: 3.5rem;
+}
+.boxes:hover {
+  background-color: #353c5bb0;
+  height: 3.7rem;
+  cursor: pointer;
+}
+.HeadUnderline {
+  color: #a454fa;
+  margin: 0;
+  border-color:  #a454fa;
+}
+.Line {
+  color: #353c5b;
+  margin: 0;
+  border-color: #353c5b;
+}
+.BoxDiv {
+  border: solid;
+  border-radius: 12px;
+  border-color: #353c5b;
+  padding: 0;
+  background-color: #131313b0;
+  margin-bottom: 2rem;
+  display: table;
+}
