@@ -1,4 +1,5 @@
 # Diale
-Here is my Messenger Project called “Diale”. 
-The goal of this project is to code a Messenger with an absolute focus on security.
-Feel free to help me code an Open Source and free Website and later maybe even a Desktop program or an App.
+Diale will be an all-in-on **Program, App, Website** to orginze your project or teams.
+
+## !!Disclaimer!!
+In the Moment Diale is under development and at this early stage of the Project we take **no** responsibility for **Errors, Crashes, Data lose** or **anything else that goes wrong!**
