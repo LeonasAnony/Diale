@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-image: url("/global/Backgrounds/cyber.jpg");
   font-family: Courier;
@@ -5,9 +8,6 @@ body {
 }
 #headline {
   margin-bottom: 0;
-}
-#headline:hover {
-  width: 52%;
 }
 #HeadDiv {
   height: 8rem;
@@ -37,15 +37,24 @@ body {
   max-height: 10rem;
 }
 #TeamDescription {
-  font-family: Courier;
   font-size: 1rem;
   color: white;
   margin-left: 1rem;
+}
+#TeamCode {
+  font-size: 1.25rem;
+  color: white;
+  margin: 1.2rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+  float: left;
+  height: 1.25rem;
 }
 #edit {
   color: #353c5b;
   font-size: 1rem;
   margin-right: 1rem;
+  margin-left: 2rem;
   margin-bottom: 0.5rem;
   float: right;
 }
@@ -63,6 +72,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 #Diale_text_small {
   margin-top: 8%;
@@ -276,4 +287,23 @@ body {
   background-color: #131313b0;
   margin-bottom: 2rem;
   display: table;
+}
+.SB-boxes:hover {
+  height: 5.2rem;
+  cursor: pointer;
+}
+.close {
+  color: white;
+  float: right;
+  font-size: 3rem;
+  font-weight: bold;
+  position: absolute;
+  right: 2%;
+  top: -1%;
+}
+.close:hover,
+.close:focus {
+  color: #131313;
+  text-decoration: none;
+  cursor: pointer;
 }
