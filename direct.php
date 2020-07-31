@@ -8,9 +8,6 @@ if(!isset($_SESSION['userid'])) {
 $userid = $_SESSION['userid'];
 $pdo = new PDO('mysql:host=localhost:3306;dbname=Diale', 'Diale', '0YGFOd2p4XNXm9FQZziX32av');
 $directid = $_GET['id'];
-$statement = $pdo->prepare("SELECT * FROM teams WHERE id = :teamid");
-$result = $statement->execute(array('teamid' => $teamid));
-$direct = $statement->fetch();
 ?>
 <!doctype html>
 <head>
@@ -29,8 +26,8 @@ $direct = $statement->fetch();
       <div class="column col-xs-3 col-lg-2 col-1" id="MenuDiv">
         <img src="global/IconsPurple/MenuLila.png" id="Menuicon" onclick="showSidebar()"/>
       </div>
-      <div class="column col-md-6 col-sm-9 col-4 col-mx-auto" onclick="goBack()">
-        <img class="center" src="global/Logos/Diale_text_new.png" id="headline"/>
+      <div class="column col-md-6 col-sm-9 col-4 col-mx-auto">
+        <img class="center" src="global/Logos/Diale_text_new.png" onclick="goBack()" id="headline"/>
       </div>
     </div>
     <!-- Content -->

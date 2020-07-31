@@ -1,6 +1,94 @@
 <?php
 session_start();
 $pdo = new PDO('mysql:host=localhost:3306;dbname=Diale', 'Diale', '0YGFOd2p4XNXm9FQZziX32av');
+require 'global/EPRequest.php';
+
+$username = false;
+$email = false;
+
+if(isset($_GET['register'])) {
+    $error = false;
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $passwort = $_POST['passwort'];
+    $passwort2 = $_POST['passwort2'];
+
+    if(strlen($username) == 0) {
+      //echo 'Bitte einen Usernamen eingeben';
+      echo "<style>.box p9 {display: inline;}</style>";
+      $error = true;
+    }
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        //echo "Bitte eine gültige E-Mail-Adresse eingeben<br>";
+        echo "<style>.box p10 {display: inline;}</style>";
+        $error = true;
+    }
+    if(strlen($passwort) == 0) {
+        //echo 'Bitte ein Passwort angeben<br>';
+        echo "<style>.box p11 {display: inline;}</style>";
+        $error = true;
+    }
+    else {
+        if(strlen($passwort) < 8){
+            echo "<style>.box p7 {display: inline;}</style>";
+            $error = true;
+        }
+    }
+    if($passwort != $passwort2) {
+        //echo 'Die Passwörter müssen übereinstimmen<br>';
+        echo "<style>.box p4 {display: inline;}</style>";
+        $error = true;
+    }
+
+    //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
+    if(!$error) {
+        $statement = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+        $result = $statement->execute(array('email' => $email));
+        $user = $statement->fetch();
+
+        if($user !== false) {
+            //echo 'Diese E-Mail-Adresse ist bereits vergeben<br><?php';
+            echo "<style>.box p5 {display: inline;}</style>";
+            $error = true;
+        }
+    }
+
+    if(!$error) {
+        $statement = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+        $result = $statement->execute(array('username' => $username));
+        $user = $statement->fetch();
+
+        if($user !== false) {
+            //echo 'Dieser Username ist bereits vergeben<br><?php';
+            echo "<style>.box p8 {display: inline;}</style>";
+            $error = true;
+        }
+    }
+
+    if (!$error) {
+      $authorID = request('createAuthor', 'authorID', 1, false, $username);
+      if ($authorID == null) {
+        $error = true;
+      }
+    }
+
+    //Keine Fehler, wir können den Nutzer registrieren
+    if(!$error) {
+        $passwort_hash = password_hash($passwort, PASSWORD_BCRYPT);
+
+        $statement = $pdo->prepare("INSERT INTO users (email, username, passwort, ep_authorID, firstlogin) VALUES (:email, :username, :passwort, :epauthorid, 1)");
+        $result = $statement->execute(array('email' => $email, 'username' => $username, 'passwort' => $passwort_hash, 'epauthorid' => $authorID));
+
+        if($result) {
+            //echo 'Du wurdest erfolgreich registriert. <a href="login.php">Zum Login</a>';
+            header('Location: login.php?registered=1');
+        } else {
+            //echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
+            echo "<style>.box p6 {display: inline;}</style>";
+            echo $statement->errorInfo()[2];
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -12,101 +100,18 @@ $pdo = new PDO('mysql:host=localhost:3306;dbname=Diale', 'Diale', '0YGFOd2p4XNXm
     <link rel="stylesheet" href="CSS/login-regis.css">
   </head>
   <body>
-    <?php
-    $showFormular = true; //Variable ob das Registrierungsformular anezeigt werden soll
-    $username = false;
-    $email = false;
-
-    if(isset($_GET['register'])) {
-        $error = false;
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $passwort = $_POST['passwort'];
-        $passwort2 = $_POST['passwort2'];
-
-        if(strlen($username) == 0) {
-          //echo 'Bitte einen Usernamen eingeben';
-          echo "<style>.box p {display: inline;}</style>";
-          $error = true;
-        }
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            //echo "Bitte eine gültige E-Mail-Adresse eingeben<br>";
-            echo "<style>.box p2 {display: inline;}</style>";
-            $error = true;
-        }
-        if(strlen($passwort) == 0) {
-            //echo 'Bitte ein Passwort angeben<br>';
-            echo "<style>.box p3 {display: inline;}</style>";
-            $error = true;
-        }
-        else {
-            if(strlen($passwort) < 8){
-                echo "<style>.box p7 {display: inline;}</style>";
-                $error = true;
-            }
-        }
-        if($passwort != $passwort2) {
-            //echo 'Die Passwörter müssen übereinstimmen<br>';
-            echo "<style>.box p4 {display: inline;}</style>";
-            $error = true;
-        }
-
-        //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
-        if(!$error) {
-            $statement = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-            $result = $statement->execute(array('email' => $email));
-            $user = $statement->fetch();
-
-            if($user !== false) {
-                //echo 'Diese E-Mail-Adresse ist bereits vergeben<br><?php';
-                echo "<style>.box p5 {display: inline;}</style>";
-                $error = true;
-            }
-        }
-
-        if(!$error) {
-            $statement = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-            $result = $statement->execute(array('username' => $username));
-            $user = $statement->fetch();
-
-            if($user !== false) {
-                //echo 'Dieser Username ist bereits vergeben<br><?php';
-                echo "<style>.box p8 {display: inline;}</style>";
-                $error = true;
-            }
-        }
-
-        //Keine Fehler, wir können den Nutzer registrieren
-        if(!$error) {
-            $passwort_hash = password_hash($passwort, PASSWORD_BCRYPT);
-
-            $statement = $pdo->prepare("INSERT INTO users (email, passwort, username, firstlogin) VALUES (:email, :passwort, :username, 1)");
-            $result = $statement->execute(array('email' => $email, 'passwort' => $passwort_hash, 'username' => $username));
-
-            if($result) {
-                //echo 'Du wurdest erfolgreich registriert. <a href="login.php">Zum Login</a>';
-                header('Location: login.php?registered=1');
-                $showFormular = false;
-            } else {
-                //echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
-                echo "<style>.box p6 {display: inline;}</style>";
-                echo $statement->errorInfo()[2];
-            }
-        }
-    }
-    ?>
     <div class="columns">
       <div class="box column col-xs-11 col-sm-7 col-md-6 col-lg-5 col-xl-4 col-3">
-        <form id="BX" action="?register=1" method="post">
+        <form id="BX" action="?register=true" method="post">
           <h1>Registration</h1>
           <input type="text" id="US" name="username" placeholder="Username" value="<?php echo $username;?>" autocomplete="off">
-          <p>Bitte einen Usernamen eingeben</p>
+          <p9>Bitte einen Usernamen eingeben</p9>
           <p8>Dieser Username ist schon vergeben</p8>
           <input type="text" id="EM" name="email" placeholder="Your E-Mail" value="<?php echo $email;?>" autocomplete="off">
-          <p2>Bitte eine gültige E-Mail-Adresse eingeben</p2>
+          <p10>Bitte eine gültige E-Mail-Adresse eingeben</p10>
           <p5>Diese E-Mail-Adresse ist bereits vergeben</p5>
           <input type="password" id="PW" name="passwort" placeholder="Password">
-          <p3>Bitte ein Passwort angeben</p3>
+          <p11>Bitte ein Passwort eingebengeben</p11>
           <p7>Das Passwort muss mindestens 8 Zeichen haben</p7>
           <input type="password" id="PW2" name="passwort2" placeholder="Confirm">
           <p4>Die Passwörter müssen übereinstimmen</p4>

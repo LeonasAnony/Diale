@@ -50,6 +50,12 @@ body {
   float: left;
   height: 1.25rem;
 }
+#UserPicture {
+  width: 100%;
+  margin: 1rem 0 1rem 0;
+  border-radius: 10%;
+  max-height: 5rem;
+}
 #edit {
   color: #353c5b;
   font-size: 1rem;
@@ -104,7 +110,7 @@ body {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
 }
-.box{
+.box, .box2, .box3, .box4 {
   display: none;
   z-index: 1;
   padding-top: 2rem;
@@ -120,16 +126,24 @@ body {
   text-align: center;
   border-radius: 12px;
 }
-.box h1 {
+.box h1, .box2 h1, .box3 h1 {
   color: white;
   text-transform: uppercase;
   font-weight: 500;
 }
-.box p, p1, p2, p3 {
+.box4 {
+  color: white;
+  font-weight: 500;
+}
+.box p, p1, p2, p3, .box2 p {
   color: red;
   display: none;
 }
-.box input[type = "text"] {
+.box3 p {
+  color: #a454ff;
+  display: inline;
+}
+.box input[type = "text"], .box2 input[type = "text"], .box3 input[type = "text"] {
   background: none;
   display: block;
   margin: 20px auto;
@@ -142,65 +156,7 @@ body {
   border-radius: 25rem;
   transition: 0.5s;
 }
-.box input[type = "text"]:focus {
-  width: 15rem;
-  border-color: #a454ff;
-}
-.box input[type = "submit"] {
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #a454ff;
-  padding: 14px 40px;
-  outline: none;
-  color: white;
-  border-radius: 25rem;
-  transition: 0.5s;
-  cursor: pointer;
-}
-.box input[type = "submit"]:hover {
-  background: #a454ff;
-}
-.box2{
-  display: none;
-  z-index: 1;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-left: 0;
-  padding-right: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  background: #131313;
-  opacity: 0.8;
-  text-align: center;
-  border-radius: 12px;
-}
-.box2 h1 {
-  color: white;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.box2 p {
-  color: red;
-  display: none;
-}
-.box2 input[type = "text"] {
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #3498db;
-  padding: 14px 10px;
-  width: 13rem;
-  outline: none;
-  color: white;
-  border-radius: 25rem;
-  transition: 0.5s;
-}
-.box2 input[type = "text"]:focus {
+.box input[type = "text"]:focus, .box2 input[type = "text"]:focus, .box3 input[type = "text"]:focus {
   width: 15rem;
   border-color: #a454ff;
 }
@@ -221,7 +177,7 @@ body {
   width: 15rem;
   border-color: #a454ff;
 }
-.box2 input[type = "submit"] {
+.box input[type = "submit"], .box2 input[type = "submit"], .box3 input[type = "submit"] {
   background: none;
   display: block;
   margin: 20px auto;
@@ -234,7 +190,7 @@ body {
   transition: 0.5s;
   cursor: pointer;
 }
-.box2 input[type = "submit"]:hover {
+.box input[type = "submit"]:hover, .box2 input[type = "submit"]:hover, .box3 input[type = "submit"]:hover {
   background: #a454ff;
 }
 .center {
@@ -301,9 +257,20 @@ body {
   right: 2%;
   top: -1%;
 }
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: #131313;
   text-decoration: none;
   cursor: pointer;
+}
+.fa-trash {
+  color: red;
+  opacity: 0.6;
+  float: right;
+  margin-right: 0.8rem;
+  margin-top: 1.3rem;
+}
+.fa-trash:hover {
+  opacity: 0.8;
+  font-size: 1.5em;
+  z-index: 2;
 }
