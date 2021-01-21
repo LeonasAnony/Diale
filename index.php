@@ -9,6 +9,13 @@ $userid = $_SESSION['userid'];
 $pdo = new PDO('mysql:host=localhost:3306;dbname=Diale', 'Diale', '0YGFOd2p4XNXm9FQZziX32av');
 require 'global/EPRequest.php';
 
+$statement = $pdo->prepare("SELECT * FROM users WHERE id = :userid");
+$result = $statement->execute(array('userid' => $userid));
+$user = $statement->fetch();
+
+if ($user['id'] != null) {
+	echo "<style>.box4 {display: inline;}</style>";
+}
 
 if(isset($_GET['teamcreate'])) {
 	$error = false;
@@ -101,14 +108,14 @@ if(isset($_GET['newdirect'])) {
 	if(!$error) {
 			$statement = $pdo->prepare("SELECT * FROM users WHERE username = :username");
 			$statement->execute(array('username' => $member));
-			$user = $statement->fetch();
+			$newdirectuser = $statement->fetch();
 
-			if($user == false) {
+			if($newdirectuser == false) {
 				echo "<style>.box2 p1 {display: inline;}</style>";
 				$error = true;
 			}
 
-			if ($user['id'] == $userid) {
+			if ($newdirectuser['id'] == $userid) {
 				echo "<style>.box2 p4 {display: inline;}</style>";
 				$error = true;
 			}
@@ -151,10 +158,23 @@ if(isset($_GET['newdirect'])) {
 	<link rel="icon" href="global/Favicons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="spectre/dist/spectre.min.css">
 <!--  <link rel="stylesheet" href="main/css/sidebar.css">-->
+	<link rel="stylesheet" href="CSS/loader.css">
 	<link rel="stylesheet" href="CSS/index.css">
-	<script language="javascript" type="text/javascript" src="JS/index.js"></script>
 </head>
 <body>
+	<div class="spinner">
+    <div class="right">
+      <h4 class="randoms top"></h4>
+      <h1 class="randoms middle"></h1>
+      <h4 class="randoms bottom"></h4>
+    </div>
+    <div class="left">
+      <h4 class="randoms top"></h4>
+      <h1 class="randoms middle"></h1>
+      <h4 class="randoms bottom"></h4>
+    </div>
+  </div>
+  <script language="javascript" type="text/javascript" src="JS/loader.js"></script>
 	<div class="container">
 		<!-- Header -->
     <div class="columns col-oneline" id="HeadDiv">
@@ -199,7 +219,7 @@ if(isset($_GET['newdirect'])) {
 					$result = $statement->execute(array('userid' => $userid, 'duserid' => $loop));
 					$direct = $statement->fetch();
 
-					echo '<div class="boxes" onclick="Direct(' . $direct['id'] . ')"><img class="profilepicture hide-sm" src="global/team' . $directuser['id']. '.png" alt="ProfilePicture"/><p class="fonts">' . $directuser['username']. '</p></div><hr class="Line">';
+					echo '<div class="boxes" onclick="Direct(' . $direct['id'] . ')"><img class="profilepicture hide-sm" src="user-data/users/id' . $directuser['id']. '.png" alt="ProfilePicture"/><p class="fonts">' . $directuser['username']. '</p></div><hr class="Line">';
 				}
 
 				unset($stack);
@@ -222,7 +242,7 @@ if(isset($_GET['newdirect'])) {
 					$result = $statement->execute(array('userid' => $userid, 'duserid' => $loop));
 					$direct = $statement->fetch();
 
-					echo '<div class="boxes" onclick="Direct(' . $direct['id'] . ')"><img class="profilepicture hide-sm" src="global/team' . $directuser['id']. '.png" alt="ProfilePicture"/><p class="fonts">' . $directuser['username']. '</p></div><hr class="Line">';
+					echo '<div class="boxes" onclick="Direct(' . $direct['id'] . ')"><img class="profilepicture hide-sm" src="user-data/users/id' . $directuser['id']. '.png" alt="ProfilePicture"/><p class="fonts">' . $directuser['username']. '</p></div><hr class="Line">';
 				}
 				?>
 				<!-- new Direct Footer -->
@@ -259,7 +279,7 @@ if(isset($_GET['newdirect'])) {
 					$result = $statement->execute(array('teamid' => $loopdata));
 					$teams = $statement->fetch();
 
-					echo '<div class="boxes" onclick="Team(' . $teams['id'] . ')"><img class="profilepicture hide-sm" src="global/team' . $teams['id'] . '.png" alt="ProfilePicture"/><p class="fonts">' . $teams['name'] . '</p></div><hr class="Line">';
+					echo '<div class="boxes" onclick="Team(' . $teams['id'] . ')"><img class="profilepicture hide-sm" src="user-data/teams/id' . $teams['id'] . '.png" alt="ProfilePicture"/><p class="fonts">' . $teams['name'] . '</p></div><hr class="Line">';
 				}
 				?>
 				<!-- new Team Footer -->
@@ -286,7 +306,7 @@ if(isset($_GET['newdirect'])) {
 		</div>
 		<div class="columns">
 			<div class="box2 column col-xs-11 col-sm-7 col-md-6 col-lg-5 col-xl-4 col-3" id="NewDirectModal">
-				<form id="TBX" action="?newdirect=true" method="post">
+				<form action="?newdirect=true" method="post">
 					<h1>New Direct</h1>
 					<input type="text" list="users" name="newdirect" placeholder="Username">
 					<datalist id="users">
@@ -319,5 +339,19 @@ if(isset($_GET['newdirect'])) {
         </div>
 			</div>
 		</div>
+		<!--<div class="columns">
+			<div class="box4 column col-xs-11 col-sm-11 col-md-11 col-lg-11 col-xl-10 col-10" id="WelcomeModal">
+				<form action="?uploadpp=true" method="post">
+					<h1>Upload Profile Picture</h1>
+					<input id="uploadInput" type="file" accept="image/*"/>
+		      <img id="cropimage">
+					<input type="hidden" id="cropimagefield"/>
+					<input type="submit" id="UploadImage" value="Upload">
+				</form>
+			</div>
+		</div>-->
   </div>
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<script src="global/Jcrop/js/jquery.Jcrop.min.js"></script>
+	<script language="javascript" type="text/javascript" src="JS/index.js"></script>
 </body>

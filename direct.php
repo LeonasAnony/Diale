@@ -16,10 +16,23 @@ $directid = $_GET['id'];
 	<link rel="icon" href="global/Favicons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="spectre/dist/spectre.min.css">
 <!--  <link rel="stylesheet" href="main/css/sidebar.css">-->
+	<link rel="stylesheet" href="CSS/loader.css">
 	<link rel="stylesheet" href="CSS/team.css">
-	<script language="javascript" type="text/javascript" src="JS/direct.js"></script>
 </head>
 <body>
+	<div class="spinner">
+    <div class="right">
+      <h4 class="randoms top"></h4>
+      <h1 class="randoms middle"></h1>
+      <h4 class="randoms bottom"></h4>
+    </div>
+    <div class="left">
+      <h4 class="randoms top"></h4>
+      <h1 class="randoms middle"></h1>
+      <h4 class="randoms bottom"></h4>
+    </div>
+  </div>
+  <script language="javascript" type="text/javascript" src="JS/loader.js"></script>
   <div class="container">
     <!-- Header -->
     <div class="columns col-oneline" id="HeadDiv">
@@ -113,4 +126,7 @@ $directid = $_GET['id'];
 			</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<script src="global/Jcrop/js/jquery.Jcrop.min.js"></script>
+	<script language="javascript" type="text/javascript" src="JS/direct.js"></script>
 </body>

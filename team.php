@@ -180,11 +180,24 @@ if(isset($_GET['pad'])) {
 	<link rel="icon" href="global/Favicons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="spectre/dist/spectre.min.css">
 <!--  <link rel="stylesheet" href="main/css/sidebar.css">-->
+	<link rel="stylesheet" href="CSS/loader.css">
 	<link rel="stylesheet" href="CSS/team.css">
-	<script language="javascript" type="text/javascript" src="JS/team.js"></script>
 	<link href="global/fontawesome/css/all.css" rel="stylesheet">
 </head>
 <body>
+	<div class="spinner">
+    <div class="right">
+      <h4 class="randoms top"></h4>
+      <h1 class="randoms middle"></h1>
+      <h4 class="randoms bottom"></h4>
+    </div>
+    <div class="left">
+      <h4 class="randoms top"></h4>
+      <h1 class="randoms middle"></h1>
+      <h4 class="randoms bottom"></h4>
+    </div>
+  </div>
+  <script language="javascript" type="text/javascript" src="JS/loader.js"></script>
   <div class="container">
     <!-- Header -->
     <div class="columns col-oneline" id="HeadDiv">
@@ -201,7 +214,7 @@ if(isset($_GET['pad'])) {
       <!-- Description ContentBox -->
       <div class="BoxDiv column col-lg-10 col-4">
         <div class="center">
-          <img src="global/team<?php echo $team['id'];?>.png" id="TeamPicture"/>
+          <img src="user-data/teams/id<?php echo $team['id'];?>.png" id="TeamPicture"/>
         </div>
         <div>
 					<h2 class="Headline">
@@ -249,7 +262,7 @@ if(isset($_GET['pad'])) {
           $result = $statement->execute(array('userid' => $loopdata));
           $users = $statement->fetch();
 
-          echo '<div class="boxes" onclick="User(' . $teamid. ',' . $users['id']. ')"><img class="profilepicture hide-sm" src="global/user' . $users['id']. '.png" alt="ProfilePicture"/><p class="fonts">' . $users['username']. '</p></div><hr class="Line">';
+          echo '<div class="boxes" onclick="User(' . $teamid. ',' . $users['id']. ')"><img class="profilepicture hide-sm" src="user-data/users/id' . $users['id']. '.png" alt="ProfilePicture"/><p class="fonts">' . $users['username']. '</p></div><hr class="Line">';
         }
         ?>
 				<!-- new Member Footer -->
@@ -415,4 +428,7 @@ if(isset($_GET['pad'])) {
 			</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<script src="global/Jcrop/js/jquery.Jcrop.min.js"></script>
+	<script language="javascript" type="text/javascript" src="JS/team.js"></script>
 </body>

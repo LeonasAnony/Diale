@@ -1,11 +1,6 @@
 html {
   scroll-behavior: smooth;
 }
-body {
-  background-image: url("/global/Backgrounds/cyber.jpg");
-  font-family: Courier;
-  line-height: 1.2;
-}
 #headline {
   margin-bottom: 0;
 }
@@ -29,6 +24,9 @@ body {
   height: 1.8rem;
   margin-right: 1.35rem;
   cursor: pointer;
+}
+.container {
+  display: none;
 }
 .modal_background {
   display: none;
@@ -61,7 +59,7 @@ body {
   padding: 0;
   border: solid 2px #353c5b;
 }
-.box h1, .box2 h1 {
+.box h1, .box2 h1, .box4 h1 {
   color: white;
   text-transform: uppercase;
   font-weight: 500;
@@ -109,7 +107,7 @@ body {
   width: 15rem;
   border-color: #a454ff;
 }
-.box input[type = "submit"], .box2 input[type = "submit"] {
+.box input[type = "submit"], .box2 input[type = "submit"], .box4 input[type = "submit"] {
   background: none;
   display: block;
   margin: 20px auto;
@@ -122,7 +120,7 @@ body {
   transition: 0.5s;
   cursor: pointer;
 }
-.box input[type = "submit"]:hover, .box2 input[type = "submit"]:hover {
+.box input[type = "submit"]:hover, .box2 input[type = "submit"]:hover, .box4 input[type = "submit"]:hover {
   background: #a454ff;
 }
 .center {

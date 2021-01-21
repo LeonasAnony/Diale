@@ -1,7 +1,7 @@
 <?php
 require 'global/EPadClient.php';
 $apikey = file_get_contents('/home/etherpad/etherpad-lite/APIKEY.txt');
-$instance = new EtherpadLite\Client($apikey, 'https://diale.ddns.net/pad/api');
+$instance = new EtherpadLite\Client($apikey, 'https://pad.diale.tech/api');
 
 function request($tocall, $answer, $type, $debug = false, $param1 = null, $param2 = null, $param3 = null) {
   global $instance;

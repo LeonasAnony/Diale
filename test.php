@@ -91,6 +91,9 @@ if (isset($_GET['option']) and $option == 0) {
   } else {
     echo prettyPrint($test);
   }
+} elseif (isset($_GET['option']) and $option == 2) {
+  echo '<link rel="stylesheet" href="CSS/test.css">';
+  echo '<div id="spinner"><div id="img1" class="img"></div><div id="img2" class="img"></div><div id="img3" class="img"></div><div id="img4" class="img"></div><div id="img5" class="img"></div></div>';
 } else {
   echo "Please specify what to do";
 }
